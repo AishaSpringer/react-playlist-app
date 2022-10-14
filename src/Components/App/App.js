@@ -28,6 +28,13 @@ class App extends React.Component {
     tracks.push(track); //add new track to playlist
     this.setState({ playlistTracks: tracks }); //set new state of playlist that includes updated array of objects
   }
+
+  removeTrack(track) {
+    let tracks = this.state.playlistTracks;
+    tracks = tracks.filter(currentTrack => currentTrack.id !== track.id);
+
+    this.setState({ playlistTracks: tracks });
+  }
   
   render() {
     return (
