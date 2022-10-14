@@ -5,6 +5,7 @@ import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
+import TrackList from '../TrackList/TrackList';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,6 +16,16 @@ class App extends React.Component {
       playlistName: 'My Playlist',
       playlistTracks: [{ name: 'playlistName1', artist: 'playlistArtist1', album: 'playlistAlbum1', id: 4}, { name: 'playlistName2', artist: 'playlistArtist2', album: 'playlistAlbum2', id: 5}, { name: 'playlistName3', artist: 'playlistArtist3', album: 'playlistAlbum3', id: 6 }]
     }
+  }
+
+  addTrack(track) {
+    let tracks = this.state.playlistTracks;
+    if (tracks.find(savedTrack => savedTrack.id === track.id)) {
+      return;
+    }
+
+    tracks.push(track); //add new track to playlist
+    this.setState({ playlistTracks: tracks }); //set new state of playlist that includes updated array of objects
   }
   
   render() {
