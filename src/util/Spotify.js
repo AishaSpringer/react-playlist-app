@@ -3,6 +3,7 @@
 const clientId = '7a999c467b424e1e8e34e5b369bffd2c';
 const redirectUri = 'http://jamming-in-react.surge.sh';
 let accessToken;
+let userId;
 
 const Spotify = {
     getAccessToken() {
@@ -101,6 +102,14 @@ const Spotify = {
                 });
             });
         });
+    },
+
+    getCurrentUserId() {
+        if (userId) {
+            return userId;
+        } else {
+            return fetch('https://api.spotify.com/v1/me')
+        }
     }
 }
 
