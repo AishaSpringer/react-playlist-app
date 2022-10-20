@@ -94,9 +94,6 @@ const Spotify = {
                     body: JSON.stringify({ name: name })
             });
         });
-
-        // update playlist's state to array of the returned playlists using playlistId and name 
-        
     },
 
     getCurrentUserId() {
