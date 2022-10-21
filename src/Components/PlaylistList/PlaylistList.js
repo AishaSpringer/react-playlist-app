@@ -18,13 +18,15 @@ export class PlaylistList extends React.Component {
     },
 
     // update playlist's state to array of the returned playlists using playlistId and name 
-    this.setState({ })
+    this.setState({ 
+        playlists: {playlistId, name}
+    })
 
     render() {
         return(
             <div className="PlaylistList">
                 <h3>{this.props.playlistListItem.name}</h3>
-                {/* render list of playlistListItem components, passing down ID and name of each playlist */}
+                {/* render list of playlistListItem components, passing down ID and name of each playlist - .map? */}
             </div>
         )
     }
